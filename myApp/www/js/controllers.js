@@ -1,12 +1,12 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
-.controller('landingPage', function($scope) {
+.controller('landingPage', function($scope, $ionicModal) {
 
 // START MODAL VIEW
 $ionicModal.fromTemplateUrl('adminView.html', {
     id       : '1',
     scope    : $scope,
-    animation: 'slide-in-up'
+    animation: 'jelly'
   }).then(function(modal) {
     $scope.modal1 = modal;
   });
