@@ -31,6 +31,7 @@ var server = app.listen(PORT, function(){
   process.stdout.write('server listening on port ' + PORT);
 });
 
+var rooms = [];
 var io = require('socket.io').listen(server);
 
 io.on('connection', function(socket){
@@ -39,11 +40,23 @@ io.on('connection', function(socket){
     console.log('user disconnected');
   });
   socket.on('create', function (room) {
+        rooms.push(room);
         socket.join(room);
         console.log(room + ' created');
   });
   socket.on('join', function (room) {
-      socket.join(room);
-      console.log(room + ' joined');
-  })
+      var arrayLength = rooms.length;
+      for (var i = 0; i < arrayLength; i++) {
+            if(rooms[i] === room) {
+                console.log(room + ' joined');
+                break;
+            }
+            else {
+                console.log(room + ' not found');
+            }
+      }
+  });
+  socket.on('sendcolors', function(data) {
+     io.sockets.in(socket.room).emit('updatecolors', "purple", "pop"); 
+  });
 });

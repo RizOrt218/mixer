@@ -44,6 +44,9 @@
         var socket = io();
         socket.emit('create', 'room1');
         socket.emit('join', 'room1');
+        socket.on('updatecolor', function (color, data) {
+            console.log(color);
+        })
     </script>
   </body>
 </html>
