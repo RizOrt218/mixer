@@ -1,5 +1,5 @@
 
-<ion-view view-title="Mixer" ng-init="toggleCreate=toggleJoin=false" >
+<ion-view ng-controller="modalViewController" view-title="Mixer" ng-init="toggleCreate=toggleJoin=false" >
   <ion-content class="padding">
     <h2>Welcome to Mixer, now get Mixin!</h2>
 
@@ -19,7 +19,7 @@
       <label class="item item-input">
         <input type="text" placeholder="Create Passcode">
       </label>
-      <button class="button button-full button-calm" ng-click="">
+      <button class="button button-full button-calm" ng-click="openModal(1)">
         Start!
       </button>
     </div>
@@ -38,5 +38,19 @@
       </button>
     </div>
     </fieldset>
+
+
+    <script id="adminView.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">{{ groupName }}</h1>
+        </ion-header-bar>
+        <ion-content>
+          Hello!
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+
   </ion-content>
 </ion-view>

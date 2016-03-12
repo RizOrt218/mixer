@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('landingPage', function($scope, $ionicModal) {
+.controller('modalViewController', function($scope, $ionicModal) {
 
 // START MODAL VIEW
 $ionicModal.fromTemplateUrl('adminView.html', {
@@ -11,6 +11,27 @@ $ionicModal.fromTemplateUrl('adminView.html', {
     $scope.modal1 = modal;
   });
 
+    $scope.openModal = function(index) {
+      console.log("consoleLogging ARE YOU THERE");
+      switch (index) {
+        case 1 : $scope.modal1.show();
+      }
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
 
 })
 
