@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // {
 //   "name": "mixer",
 //   "version": "1.0.0",
@@ -30,3 +31,12 @@
 //   "gulp-sass": "^2.2.0"
 //   }
 // }
+=======
+{
+  "name": "mixer",
+  "version": "0.0.0",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
+>>>>>>> backendserver
