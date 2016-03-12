@@ -1,0 +1,17 @@
+<ion-view view-title="Mixer" ng-init="toggleCreate=true" >
+  <ion-content class="padding">
+    <h2>Welcome to Mixer, now get Mixin!</h2>
+
+    <button class="button button-positive" ng-click="!toggleCreate">
+      Create a Group
+    </button>
+
+    <button class="button button-calm">
+      Join a Group
+    </button>
+
+      <div ng-hide="toggleCreate">
+        SHOW ME!
+      </div>
+  </ion-content>
+</ion-view>
