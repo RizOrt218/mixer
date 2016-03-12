@@ -37,7 +37,8 @@ var io = require('socket.io').listen(server);
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('disconnect', function(){
-    console.log('user disconnected');
+     
+    console.log('user disconnected' + socket);
   });
   socket.on('create', function (room) {
         rooms.push(room);
@@ -57,6 +58,8 @@ io.on('connection', function(socket){
       }
   });
   socket.on('sendcolors', function(data) {
-     io.sockets.in(socket.room).emit('updatecolors', "purple", "pop"); 
+      console.log('send colors');
+     io.sockets.in(socket.room).emit('updatecolors', "purple", data); 
   });
+  
 });
