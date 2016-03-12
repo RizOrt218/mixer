@@ -33,7 +33,7 @@
       <label class="item item-input">
         <input type="text" placeholder="Passcode">
       </label>
-      <button class="button button-full button-calm">
+      <button class="button button-full button-calm" ng-click="openModal(1)">
         Join!
       </button>
     </div>
@@ -47,6 +47,24 @@
         </ion-header-bar>
         <ion-content>
           Hello!
+          <button class="button button-full button-calm" ng-click="closeModal()">
+            back
+          </button>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+
+    <script id="guestView.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">{{ groupName }}</h1>
+        </ion-header-bar>
+        <ion-content>
+          Hello!
+          <button class="button button-full button-calm" ng-click="closeModal()">
+            back
+          </button>
         </ion-content>
       </ion-modal-view>
     </script>

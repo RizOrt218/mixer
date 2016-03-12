@@ -11,14 +11,23 @@ $ionicModal.fromTemplateUrl('adminView.html', {
     $scope.modal1 = modal;
   });
 
+  $ionicModal.fromTemplateUrl('guestView.html', {
+      id       : '2',
+      scope    : $scope,
+      animation: 'jelly'
+    }).then(function(modal) {
+      $scope.modal2 = modal;
+    });
+
     $scope.openModal = function(index) {
-      console.log("consoleLogging ARE YOU THERE");
       switch (index) {
         case 1 : $scope.modal1.show();
+                  break;
+        case 2 : $scope.modal2.show();
       }
     };
     $scope.closeModal = function() {
-      $scope.modal.hide();
+      $scope.modal1.hide();
     };
     //Cleanup the modal when we're done with it!
     $scope.$on('$destroy', function() {
