@@ -1,32 +1,27 @@
-// {
-//   "name": "mixer",
-//   "version": "1.0.0",
-//   "description": "",
-//   "main": "index.js",
-//   "dependencies": {
-//     "body-parser": "^1.15.0",
-//     "mongoose": "^4.4.7",
-//     "passport": "^0.3.2",
-//     "passport-local": "^1.0.0",
-//     "express": "^4.13.4"
-//   },
-//   "scripts": {
-//     "test": "echo \"Error: no test specified\" && exit 1",
-//     "start": "node server.js"
-//   },
-//   "repository": {
-//     "type": "git",
-//     "url": "git+https://github.com/RizOrt218/mixer.git"
-//   },
-//   "author": "",
-//   "license": "ISC",
-//   "bugs": {
-//     "url": "https://github.com/RizOrt218/mixer/issues"
-//   },
-//   "homepage": "https://github.com/RizOrt218/mixer#readme",
-//   "devDependencies": {
-//   "gulp": "^3.9.1",
-//   "gulp-connect": "^2.3.1",
-//   "gulp-sass": "^2.2.0"
-//   }
-// }
+{
+  "name": "mixer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express-session": "^1.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "sequelize": "^3.19.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RizOrt218/mixer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RizOrt218/mixer/issues"
+  },
+  "homepage": "https://github.com/RizOrt218/mixer#readme"
+}

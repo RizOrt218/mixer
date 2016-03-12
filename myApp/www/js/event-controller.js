@@ -6,21 +6,12 @@ angular.module('myApp')
   };
   $scope.EventService = EventService;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  $scope.newEvent = function(event){
+    EventService.createEvent(event)
+      .then(function(event){
+        $location.url('/event/'+event.data.id);
+    });
+  };
 
 
 }]);
