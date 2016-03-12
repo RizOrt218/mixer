@@ -1,5 +1,5 @@
 
-<ion-view ng-controller="landingPage" view-title="Mixer" ng-init="toggleCreate=toggleJoin=false" >
+<ion-view ng-controller="modalViewController" view-title="Mixer" ng-init="toggleCreate=toggleJoin=false" >
   <ion-content class="padding">
     <h2>Welcome to Mixer, now get Mixin!</h2>
 
@@ -12,36 +12,63 @@
     </button>
 
     <fieldset class="inputForm" ng-show="toggleCreate">
-      <div class="list">
-        <label class="item item-input">
-          <input type="text" placeholder="Create Event Name" ng-model="event.name">
-        </label>
-        <label class="item item-input">
-          <input type="text" placeholder="Create Passcode" ng-model="event.passcode">
-        </label>
-        <button class="button button-full button-calm" ng-click = "newEvent(event)">
-          Start!
-        </button>
-      </div>
+
+     <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Create Event Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Create Passcode">
+      </label>
+      <button class="button button-full button-calm" ng-click="openModal(1)">
+        Start!
+      </button>
+    </div>
     </fieldset>
 
-    <div ng-show="toggleJoin">
-      <fieldset class="inputForm" >
-      <div class="list">
-        <label class="item item-input">
-          <input type="text" placeholder="Event Name">
-        </label>
-        <label class="item item-input">
-          <input type="text" placeholder="Passcode">
-        </label>
-        <button class="button button-full button-calm">
-          Join!
-        </button>
-      </div>
-      </fieldset>
-      <div ng-repeat = "event in Events">
-
-      </div>
+    <fieldset class="inputForm" ng-show="toggleJoin">
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Event Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Passcode">
+      </label>
+      <button class="button button-full button-calm" ng-click="openModal(1)">
+        Join!
+      </button>
     </div>
+    </fieldset>
+
+
+    <script id="adminView.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">{{ groupName }}</h1>
+        </ion-header-bar>
+        <ion-content>
+          Hello!
+          <button class="button button-full button-calm" ng-click="closeModal()">
+            back
+          </button>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+
+    <script id="guestView.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">{{ groupName }}</h1>
+        </ion-header-bar>
+        <ion-content>
+          Hello!
+          <button class="button button-full button-calm" ng-click="closeModal()">
+            back
+          </button>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
   </ion-content>
 </ion-view>
