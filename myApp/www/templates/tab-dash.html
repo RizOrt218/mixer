@@ -1,4 +1,5 @@
-<ion-view view-title="Mixer" ng-init="toggleCreate=toggleJoin=false" >
+
+<ion-view ng-controller="landingPage" view-title="Mixer" ng-init="toggleCreate=toggleJoin=false" >
   <ion-content class="padding">
     <h2>Welcome to Mixer, now get Mixin!</h2>
 
@@ -6,12 +7,36 @@
       Create a Group
     </button>
 
-    <button class="button button-calm">
+    <button class="button button-calm" ng-click="toggleCreate=false; toggleJoin=true">
       Join a Group
     </button>
 
-      <div ng-hide="toggleCreate=true">
-        SHOW ME!
-      </div>
+    <fieldset ng-show="toggleCreate">
+     <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Create Event Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Create Passcode">
+      </label>
+      <button class="button button-full button-calm">
+        Start!
+      </button>
+    </div>
+    </fieldset>
+
+    <fieldset ng-show="toggleJoin">
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Event Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Passcode">
+      </label>
+      <button class="button button-full button-calm">
+        Join!
+      </button>
+    </div>
+    </fieldset>
   </ion-content>
 </ion-view>
