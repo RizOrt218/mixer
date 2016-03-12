@@ -2,6 +2,15 @@ angular.module('starter.controllers', [])
 
 .controller('landingPage', function($scope) {
 
+// START MODAL VIEW
+$ionicModal.fromTemplateUrl('adminView.html', {
+    id       : '1',
+    scope    : $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal1 = modal;
+  });
+
 
 })
 
