@@ -5,14 +5,15 @@ var bodyParser = require('body-parser');
 var db = require('./../../models');
 var Event = db.Event;
 
-router.use(bodyParser.json());
+router.use(bodyParser.json({extended : false}));
 
 router.get('/',function(request, response){
   Event.findAll()
     .then(function(data){
-      response.render('events',{
-        events : data
-    });
+    //   response.render('events',{
+    //     events : data
+    // });
+      return response.json(data);
   });
 });
 

@@ -14,6 +14,7 @@ var userId;
 var db = require('./../models');
 var Event = db.Event;
 
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(session(CONFIG.SESSION));
 
 app.use('/event', require('./routes/event.js'));

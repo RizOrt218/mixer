@@ -7,6 +7,32 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
+// .constant('processENV', {
+//    "development": {
+//      "username": "MicahKoki",
+//      "password": null,
+//      "database": "mixer",
+//      "host": "127.0.0.1",
+//      "dialect": "postgres",
+//      "domain" : "http://localhost:3000/"
+//    },
+//    "test": {
+//      "username": "postgres",
+//      "password": null,
+//      "database": "bike_hawaii",
+//      "host": "127.0.0.1",
+//      "dialect": "postgres"
+//    },
+//    "production": {
+//      "username": "postgres",
+//      "password": null,
+//      "database": "bike_hawaii",
+//      "host": "127.0.0.1",
+//      "dialect": "postgres",
+//      "domain" : "ridehawaii.com"
+//    }
+//  })
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
