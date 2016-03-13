@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var CONFIG = require('./../config/config.json');
+//var CONFIG = require('./../config/config.json');
 var PORT = process.env.PORT || 3000;
 
 var session = require('express-session');
@@ -11,13 +11,18 @@ var methodOverride = require('method-override');
 // var flash = require('connect-flash');
 // var bcrypt = require('bcrypt');
 var userId;
-var db = require('./../models');
-var Event = db.Event;
+//var db = require('./../models');
+//var Event = db.Event;
 
-app.use(session(CONFIG.SESSION));
+//app.use(session(CONFIG.SESSION));
 
-app.use('/event', require('./routes/event.js'));
+//app.use('/event', require('./routes/event.js'));
 
+app.use(express.static(__dirname + '/../www'));
+
+app.get('/', function (req, res) {
+   res.sendFile('index.html') ;
+});
 var server = app.listen(PORT, function(){
 
   //db.sequelize.sync();

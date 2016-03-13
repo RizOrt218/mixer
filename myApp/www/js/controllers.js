@@ -22,13 +22,14 @@ $ionicModal.fromTemplateUrl('adminView.html', {
     $scope.openModal = function(index) {
       switch (index) {
         case 1 : $scope.modal1.show();
-            socket.emit("create", "room3");
                   break;
         case 2 : {
-            socket.emit("create", "room2");
             $scope.modal2.show();
         }
       }
+    };
+    $scope.emitEvent = function(event) {
+      socket.emit('create', event)
     };
     $scope.closeModal = function() {
       $scope.modal1.hide();

@@ -15,12 +15,12 @@
 
      <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Create Event Name">
+        <input type="text" placeholder="Create Event Name" ng-model="user.name">
       </label>
       <label class="item item-input">
         <input type="text" placeholder="Create Passcode">
       </label>
-      <button class="button button-full button-calm" ng-click="openModal(1)">
+      <button class="button button-full button-calm" ng-click="openModal(1); emitEvent(user.name);">
         Start!
       </button>
     </div>
