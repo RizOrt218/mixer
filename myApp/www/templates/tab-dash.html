@@ -1,16 +1,18 @@
 
 <ion-view ng-controller="modalViewController" view-title="Mixer" ng-init="toggleCreate=toggleJoin=false" >
-  <ion-content class="padding">
-    <h2>Welcome to Mixer, now get Mixin!</h2>
+  <ion-content class="padding landingPage">
+    <h2>Welcome to Mixer,  &nbsp now get Mixin!</h2>
 
-    <button class="button button-positive" ng-click="toggleCreate=true; toggleJoin=false">
+    <button class="button button-positive button-full medButton" ng-click="toggleCreate=true; toggleJoin=false">
       Create a Group
     </button>
 
-    <button class="button button-calm" ng-click="toggleCreate=false; toggleJoin=true">
-      Join a Group
+    <button class="button button-calm button-full medButton" ng-click="toggleCreate=false; toggleJoin=true">
+      Join a Mix
     </button>
 
+
+    <!-- FIEDLSET FOR ADMIN -->
     <fieldset class="inputForm" ng-show="toggleCreate">
 
      <div class="list">
@@ -20,12 +22,20 @@
       <label class="item item-input">
         <input type="text" placeholder="Create Passcode">
       </label>
+
+      <label class="item item-input">
+        <span class="input-label">Start Time</span>
+        <input type="time">
+      </label>
+
       <button class="button button-full button-calm" ng-click="openModal(1)">
-        Start!
+        Create a Mix!
       </button>
     </div>
     </fieldset>
 
+
+    <!-- FIELDSET FOR GUESTS -->
     <fieldset class="inputForm" ng-show="toggleJoin">
     <div class="list">
       <label class="item item-input">
@@ -34,7 +44,7 @@
       <label class="item item-input">
         <input type="text" placeholder="Passcode">
       </label>
-      <button class="button button-full button-calm" ng-click="openModal(1)">
+      <button class="button button-full button-calm" ng-click="openModal(2)">
         Join!
       </button>
     </div>
@@ -47,8 +57,18 @@
           <h1 class="title">{{ groupName }}</h1>
         </ion-header-bar>
         <ion-content>
-          Hello!
-          <button class="button button-full button-calm" ng-click="closeModal()">
+          Hello! THIS SHOULD SHOW TIMER.. COUNTING DOWN TO WHEN THE MIXER STARTS
+
+
+<!--           <label class="item item-input">
+            <span class="input-label">Start Time</span>
+            <input type="time">
+          </label> -->
+
+
+
+
+          <button class="button button-full button-calm" ng-click="closeModal(1)">
             back
           </button>
         </ion-content>
@@ -63,12 +83,13 @@
         </ion-header-bar>
         <ion-content>
           Hello!
-          <button class="button button-full button-calm" ng-click="closeModal()">
+          <button class="button button-full button-calm" ng-click="closeModal(2)">
             back
           </button>
         </ion-content>
       </ion-modal-view>
     </script>
+
 
   </ion-content>
 </ion-view>

@@ -1,4 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+
+
+h2 {
+  font-family: "Yanone Kaffeesatz";
+  text-align: center;
+}
+
 .inputForm {
   margin-top: 50px;
   padding-top: 12px
+}
+
+.landingPage {
+  background-color: #E2F8F6;
 }
