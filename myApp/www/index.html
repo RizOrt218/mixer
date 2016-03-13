@@ -43,11 +43,10 @@
     <script>
         var socket = io();
         socket.emit('create', 'room1', 3600000); // admin sends (event, room name, eventtime)
-        //socket.emit('join', 'room1'); // guest sends (event, room name)
+        socket.emit('join', 'room1'); // guest sends (event, room name)
         socket.emit('sendcolors', 'abcdef') // admin sends (event, color)
         socket.on('updatecolor', function (color, data) { // guest receives color update
-            console.log(color);
-            console.log(data);
+            //update page
         })
     </script>
   </body>

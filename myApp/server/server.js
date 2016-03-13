@@ -32,6 +32,8 @@ var server = app.listen(PORT, function(){
 });
 
 var rooms = [];
+var colors = ['red','blue','green', 'yellow'];
+
 var io = require('socket.io').listen(server);
 
 io.on('connection', function(socket){
@@ -45,7 +47,7 @@ io.on('connection', function(socket){
         socket.join(room);
         console.log(room + ' created');
   });
-  socket.on('join', function (room) {
+  socket.on('join', function (room, passcode) {
       var arrayLength = rooms.length;
       for (var i = 0; i < arrayLength; i++) {
             if(rooms[i] === room) {
@@ -55,6 +57,7 @@ io.on('connection', function(socket){
             else {
                 console.log(room + ' not found');
             }
+            socket.emit(colors[Math.random() *  (3 - 0) + 0]);
       }
   });
   socket.on('sendcolors', function(data) {

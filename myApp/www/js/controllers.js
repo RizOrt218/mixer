@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('modalViewController', function($scope, $ionicModal) {
+.controller('modalViewController', function($scope, $ionicModal, socket) {
 
 // START MODAL VIEW
 $ionicModal.fromTemplateUrl('adminView.html', {
@@ -22,8 +22,12 @@ $ionicModal.fromTemplateUrl('adminView.html', {
     $scope.openModal = function(index) {
       switch (index) {
         case 1 : $scope.modal1.show();
+            socket.emit("create", "room3");
                   break;
-        case 2 : $scope.modal2.show();
+        case 2 : {
+            socket.emit("create", "room2");
+            $scope.modal2.show();
+        }
       }
     };
     $scope.closeModal = function() {
