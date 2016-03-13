@@ -3,13 +3,13 @@ angular.module('starter.controllers', ['ionic'])
 .controller('modalViewController', function($scope, $ionicModal) {
 
 // START MODAL VIEW
-$ionicModal.fromTemplateUrl('adminView.html', {
-    id       : '1',
-    scope    : $scope,
-    animation: 'jelly'
-  }).then(function(modal) {
-    $scope.modal1 = modal;
-  });
+  $ionicModal.fromTemplateUrl('adminView.html', {
+      id       : '1',
+      scope    : $scope,
+      animation: 'jelly'
+    }).then(function(modal) {
+      $scope.modal1 = modal;
+    });
 
 $ionicModal.fromTemplateUrl('guestView.html', {
     id       : '2',
@@ -26,6 +26,7 @@ $ionicModal.fromTemplateUrl('guestView.html', {
       case 2 : $scope.modal2.show();
     }
   };
+
   $scope.closeModal = function(index) {
     switch (index) {
       case 1 : $scope.modal1.hide();
@@ -48,8 +49,26 @@ $ionicModal.fromTemplateUrl('guestView.html', {
 
 })
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $rootScope, EventService) {
+  $scope.Events = [];
+  $scope.event = {
+    createdBy : $rootScope.creator_user
+  };
+  $scope.EventService = EventService;
 
+  $scope.getAllEvents = function(){
+    EventService.getEvents().success(function(data){
+      $scope.Events = data;
+    });
+  };
+
+  $scope.newEvent = function(event){
+    console.log(event);
+    EventService.createEvent(event)
+      .then(function(event){
+        $location.url('/event/'+event.data.id);
+    });
+  };
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
